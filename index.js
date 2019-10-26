@@ -1,14 +1,31 @@
 $(function() {
  $('.shopping-item-toggle').click(function(){
 
-    $('.shopping-item').closest('span').toggleClass('shopping-item__checked');
+    
+    $(this).prev('shopping-item').toggleClass('shopping-item__checked');
     alert('script loaded');
 
+
     
+    $('.shopping-item-delete').click(function() {
+        this.closest('li').remove();
+    })
+
  }); 
 });
 
+/* possible path for delete function...
+
+    $('ul').on('click', '.shopping-item-delete', function() {
+        $(this).closest("li").remove("li");
+    })
+
+*/
+
 /*
+
+Beginning of my thoughts for adding other items to list...
+
 $(function() {
 $(".submit").click(function(event) {
 event.preventDefault();
@@ -25,3 +42,24 @@ event.preventDefault();
 );
 })
 }); */
+
+/*
+ $('.shopping-item-toggle').click(function(){
+        console.log('this', this)
+      
+        $(this).toggleClass('shopping-item__checked');
+    
+ }); 
+});*/
+
+/*
+$('.shopping-item-toggle').on('click',function(){
+
+    
+    $('.shopping-item').toggleClass('shopping-item__checked');
+    alert('script loaded');
+*/
+
+$('.shopping-item-delete').click(function() {
+    this.remove();
+})
