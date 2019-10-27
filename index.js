@@ -4,15 +4,14 @@ $(function() {
     
     $(this).prev('shopping-item').toggleClass('shopping-item__checked');
     alert('script loaded');
+ })
 
-
-    
     $('.shopping-item-delete').click(function() {
-        this.closest('li').remove();
-    })
-
+     $(this).parent(this).parent().remove();
+     alert('clicked delete');
+  })
  }); 
-});
+
 
 /* possible path for delete function...
 
@@ -20,17 +19,30 @@ $(function() {
         $(this).closest("li").remove("li");
     })
 
+or 
+    $('.shopping-item-delete').click(function() {
+        this.closest('li').remove();
+    })
+
+
+or I also tried this...
+
+    $('.shopping-item-delete').click(function() {
+      this.remove().parent('li');
+  })
+
+
 */
 
-/*
 
+/*
 Beginning of my thoughts for adding other items to list...
 
-$(function() {
+
 $(".submit").click(function(event) {
 event.preventDefault();
     $("ul").append(
-"<li>" + <span class="shopping-item">apples</span>
+"<li>" + <span class="shopping-item">this.text(`${event.key}`)</span>
 <div class="shopping-item-controls">
   <button class="shopping-item-toggle">
     <span class="button-label">check</span>
@@ -41,7 +53,7 @@ event.preventDefault();
 </div> + "</li>"
 );
 })
-}); */
+*/
 
 /*
  $('.shopping-item-toggle').click(function(){
@@ -59,7 +71,3 @@ $('.shopping-item-toggle').on('click',function(){
     $('.shopping-item').toggleClass('shopping-item__checked');
     alert('script loaded');
 */
-
-$('.shopping-item-delete').click(function() {
-    this.remove();
-})
