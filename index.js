@@ -1,8 +1,6 @@
 $(function() {
  $('.shopping-item-toggle').click(function(){
-
-    
-    $(this).prev('shopping-item').toggleClass('shopping-item__checked');
+    $(this).closest('.shopping-item').toggleClass('shopping-item__checked');
     alert('script loaded');
  })
 
