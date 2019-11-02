@@ -1,8 +1,8 @@
 $(function() {
 
-  $('form').click($(this).closest(':button'), function () {
-        alert('submit');
-        $(':button').preventDefault();
+  $('body').find('form').submit(function (e) {
+    alert('submit');
+    e.preventDefault('submit');
   });
 
 /*
