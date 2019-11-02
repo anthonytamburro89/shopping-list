@@ -1,11 +1,21 @@
 $(function() {
 
-  $('js-shopping-list-form').on('submit', function () {
-    $(this).preventDefault();
-    alert('submit');
-    let addNewItem = $('shopping-list-entry').val();
-    $('ul').append('<li><span class="shopping-item"></span> 
-    <div class = "shopping-item-controls"> 
+  $('form').click($(this).closest(':button'), function () {
+        alert('submit');
+        $(':button').preventDefault();
+  });
+
+/*
+$('form').on('click',$(this).closest(':button'), function () {
+        alert('submit');
+        $(this).preventDefault();
+  });
+  */
+
+
+/*
+      $('ul').append('<li><span class="shopping-item">$(('shopping-list-entry').val(''))</span> 
+    <div class = "shopping-item-controls">
       <button class="shopping-item-toggle"> 
         <span class="button-label">check</span> 
       </button> 
@@ -15,7 +25,7 @@ $(function() {
     </div> 
     </li>');
   
-  })
+  })*/
 
 
  $('ul').on('click', '.shopping-item-toggle', function() {
